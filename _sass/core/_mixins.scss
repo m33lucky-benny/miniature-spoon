@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "variables" as *;
 // =============================================================================
 // MIXINS
 // =============================================================================
@@ -79,7 +81,7 @@
 }
 
 @mixin gradient-text {
-  background: linear-gradient(135deg, $c-accent 0%, lighten($c-accent, 15%) 100%);
+  background: linear-gradient(135deg, $c-accent 0%, color.adjust($c-accent, $lightness: 15%) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

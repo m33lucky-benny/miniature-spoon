@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "../core" as *;
 // =============================================================================
 // HERO
 // =============================================================================
@@ -223,7 +225,7 @@
 
 .hero-panel__bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, $c-accent, lighten($c-accent, 15%));
+  background: linear-gradient(90deg, $c-accent, color.adjust($c-accent, $lightness: 15%));
   border-radius: $radius-full;
 
   // Static demo fill — decorative only

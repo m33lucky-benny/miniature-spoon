@@ -5,27 +5,27 @@
 // =============================================================================
 
 // 1. Core tokens and helpers (no output yet)
-@import "core/variables";
-@import "core/mixins";
+@use "core/variables" as *;
+@use "core/mixins" as *;
 
 // 2. Base reset and global type
-@import "core/base";
-@import "core/utilities";
+@use "core/base";
+@use "core/utilities";
 
 // 3. Layout
-@import "layout/grid";
-@import "layout/header";
-@import "layout/footer";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
 
 // 4. Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/forms";
-@import "components/hero";
-@import "components/sections";
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/hero";
+@use "components/sections";
 
 // 5. Page-specific overrides
-@import "pages/home";
-@import "pages/contact";
-@import "pages/products";
-@import "pages/payments";
+@use "pages/home";
+@use "pages/contact";
+@use "pages/products";
+@use "pages/payments";

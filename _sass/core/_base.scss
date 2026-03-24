@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
 // =============================================================================
 // BASE — reset, html, body, global type
 // =============================================================================
@@ -60,7 +63,7 @@ a {
   transition: color $transition-fast;
 
   &:hover {
-    color: lighten($c-accent, 15%);
+    color: color.adjust($c-accent, $lightness: 15%);
   }
 
   @include focus-ring;

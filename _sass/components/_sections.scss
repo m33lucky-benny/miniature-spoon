@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "../core" as *;
 // =============================================================================
 // SECTIONS — shared section components
 // =============================================================================
@@ -332,7 +334,7 @@
   left: 0;
   height: 2px;
   width: 0%;
-  background: linear-gradient(90deg, $c-accent, lighten($c-accent, 20%));
+  background: linear-gradient(90deg, $c-accent, color.adjust($c-accent, $lightness: 20%));
   z-index: #{$z-sticky + 1};
   transition: width 0.1s linear;
 }

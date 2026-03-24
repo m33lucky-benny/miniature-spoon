@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "../core" as *;
 // =============================================================================
 // HEADER & NAVIGATION
 // =============================================================================
@@ -53,7 +55,7 @@
 .site-logo__mark {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, $c-accent 0%, darken($c-accent, 15%) 100%);
+  background: linear-gradient(135deg, $c-accent 0%, color.adjust($c-accent, $lightness: -15%) 100%);
   border-radius: $radius-md;
   @include flex-center;
   flex-shrink: 0;

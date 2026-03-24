@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "../core" as *;
 // =============================================================================
 // BUTTONS
 // =============================================================================
@@ -7,7 +9,7 @@
 
   // --- Primary (accent fill) ---
   &--primary {
-    background: linear-gradient(135deg, $c-accent 0%, darken($c-accent, 10%) 100%);
+    background: linear-gradient(135deg, $c-accent 0%, color.adjust($c-accent, $lightness: -10%) 100%);
     color: #fff;
     box-shadow: $shadow-accent;
 

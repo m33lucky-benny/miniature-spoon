@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "../core" as *;
 // =============================================================================
 // CARDS
 // =============================================================================
@@ -92,7 +94,7 @@
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, $c-accent, darken($c-accent, 10%));
+    background: linear-gradient(135deg, $c-accent, color.adjust($c-accent, $lightness: -10%));
     color: #fff;
     font-size: $text-xs;
     font-weight: $fw-bold;
