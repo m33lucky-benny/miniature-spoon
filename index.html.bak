@@ -1,0 +1,1809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Payment Systems Consulting | Ebiya.sg - Southeast Asia Payment
+      Infrastructure Experts
+    </title>
+    <meta
+      name="description"
+      content="Professional payment systems consulting for Southeast Asia merchants. 20+ years experience from VISA, PayPal. Free assessment tool for OTAs, hotels, e-commerce."
+    />
+    <meta
+      name="keywords"
+      content="payment systems, southeast asia, fintech consulting, payment gateway, PSP, GrabPay, TouchNGo, DANA, Singapore payments"
+    />
+    <meta name="author" content="Ebiya.sg Payment Consulting" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Payment Systems Consulting | Ebiya.sg" />
+    <meta
+      property="og:description"
+      content="Professional payment systems consulting for Southeast Asia merchants. 20+ years experience from VISA, PayPal. Free assessment tool."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://payments.ebiya.sg" />
+    <meta
+      property="og:image"
+      content="https://payments.ebiya.sg/og-image.jpg"
+    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Payment Systems Consulting | Ebiya.sg"
+    />
+    <meta
+      name="twitter:description"
+      content="20+ years VISA, PayPal experience. Free payment assessment for SEA merchants."
+    />
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Ebiya.sg Payment Consulting",
+        "description": "Professional payment systems consulting for Southeast Asia merchants",
+        "url": "https://payments.ebiya.sg",
+        "telephone": "+6587776638",
+        "email": "ebiya.sg@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "55 Changi Road, Unit B1-01",
+          "addressLocality": "Singapore",
+          "addressCountry": "SG"
+        },
+        "areaServed": [
+          "Singapore",
+          "Malaysia",
+          "Thailand",
+          "Indonesia",
+          "Vietnam",
+          "Philippines"
+        ],
+        "serviceType": [
+          "Payment Systems Consulting",
+          "PSP Integration",
+          "Payment Infrastructure Optimization"
+        ]
+      }
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#667eea",
+              secondary: "#764ba2",
+              accent: "#10b981",
+            },
+            fontFamily: {
+              sans: [
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica Neue",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Gradient utilities */
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .gradient-card {
+        background: linear-gradient(135deg, #667eea15, #764ba215);
+      }
+
+      /* Hero pattern */
+      .hero-pattern {
+        background-color: #667eea;
+        background-image:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(118, 75, 162, 0.4) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(102, 126, 234, 0.6) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(16, 185, 129, 0.1) 0%,
+            transparent 70%
+          );
+        background-size: cover;
+      }
+
+      /* Card hover */
+      .card-hover {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+      }
+
+      /* Nav link underline animation */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #667eea;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Section fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Stats counter */
+      .stat-item {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .stat-item:last-child {
+        border-right: none;
+      }
+
+      /* Popular badge */
+      .popular-badge {
+        background: linear-gradient(135deg, #10b981, #059669);
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+        color: white;
+        letter-spacing: 0.05em;
+      }
+
+      /* Assessment feature list */
+      .feature-check {
+        color: #10b981;
+      }
+
+      /* Form focus */
+      .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+      }
+
+      /* Print */
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        .gradient-bg {
+          background: #667eea !important;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: block;
+      }
+
+      /* Scroll indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #10b981);
+        z-index: 9999;
+        transition: width 0.1s ease;
+      }
+
+      /* Logo placeholder */
+      .logo-placeholder {
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        border: 2px dashed #cbd5e1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm no-print"
+      id="header"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="#home" class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center shadow-md"
+            >
+              <i class="fa-solid fa-credit-card text-white text-base"></i>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 leading-tight text-base">
+                Ebiya.sg
+              </div>
+              <div class="text-xs text-gray-500 leading-tight hidden sm:block">
+                Payment Systems Consulting
+              </div>
+            </div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              href="#services"
+              class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="#assessment"
+              class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              >Free Assessment</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              >Contact</a
+            >
+            <a
+              href="http://154.43.52.68:3000"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="gradient-bg text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <i class="fa-solid fa-rocket mr-1.5"></i>Free Assessment
+            </a>
+          </nav>
+
+          <!-- Mobile Hamburger -->
+          <button
+            id="menu-btn"
+            class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden border-t border-gray-100 py-4">
+          <nav class="flex flex-col gap-1">
+            <a
+              href="#services"
+              class="px-4 py-3 text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-nav-link"
+            >
+              <i class="fa-solid fa-briefcase mr-2 text-primary/60 w-4"></i
+              >Services
+            </a>
+            <a
+              href="#assessment"
+              class="px-4 py-3 text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-nav-link"
+            >
+              <i class="fa-solid fa-chart-bar mr-2 text-primary/60 w-4"></i>Free
+              Assessment
+            </a>
+            <a
+              href="#about"
+              class="px-4 py-3 text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-nav-link"
+            >
+              <i class="fa-solid fa-user mr-2 text-primary/60 w-4"></i>About
+            </a>
+            <a
+              href="#contact"
+              class="px-4 py-3 text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors mobile-nav-link"
+            >
+              <i class="fa-solid fa-envelope mr-2 text-primary/60 w-4"></i
+              >Contact
+            </a>
+            <div class="px-4 pt-2">
+              <a
+                href="http://154.43.52.68:3000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block gradient-bg text-white text-sm font-semibold px-5 py-3 rounded-xl text-center hover:opacity-90 transition-all shadow-md"
+              >
+                <i class="fa-solid fa-rocket mr-1.5"></i>Start Free Assessment
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section
+      id="home"
+      class="hero-pattern pt-24 pb-20 md:pt-32 md:pb-28 text-white relative overflow-hidden"
+    >
+      <!-- Decorative blobs -->
+      <div
+        class="absolute top-10 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-10 left-10 w-48 h-48 bg-accent/10 rounded-full blur-2xl pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text -->
+          <div class="fade-in">
+            <div
+              class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6"
+            >
+              <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+              Southeast Asia Payment Specialists
+            </div>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+            >
+              Southeast Asia<br />
+              <span class="text-accent">Payment Systems</span><br />
+              Expertise
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-white/85 leading-relaxed mb-8 max-w-xl"
+            >
+              20+ years of experience from
+              <strong class="text-white">VISA, PayPal</strong>, and regional
+              travel merchants. We help businesses optimize payment
+              infrastructure to
+              <strong class="text-accent">increase revenue by 15–25%</strong>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="http://154.43.52.68:3000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 text-base"
+              >
+                <i class="fa-solid fa-rocket"></i>Start Free Assessment
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/25 transition-all text-base"
+              >
+                <i class="fa-solid fa-calendar-check"></i>Book Consultation
+              </a>
+            </div>
+            <p class="mt-5 text-sm text-white/60 flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-accent"></i>
+              Free assessment · No credit card required · Results in 5 minutes
+            </p>
+          </div>
+
+          <!-- Hero Cards -->
+          <div class="fade-in hidden lg:block">
+            <div class="relative">
+              <!-- Main card -->
+              <div
+                class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-2xl"
+              >
+                <div class="flex items-center gap-3 mb-5">
+                  <div
+                    class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-chart-line text-white"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-white text-sm">
+                      Payment Health Score
+                    </div>
+                    <div class="text-white/60 text-xs">
+                      Based on 6-dimension analysis
+                    </div>
+                  </div>
+                  <div class="ml-auto text-3xl font-bold text-accent">72</div>
+                </div>
+                <div class="space-y-2.5">
+                  <div>
+                    <div
+                      class="flex justify-between text-xs text-white/70 mb-1"
+                    >
+                      <span>Coverage & Reach</span><span>65%</span>
+                    </div>
+                    <div class="h-1.5 bg-white/20 rounded-full">
+                      <div class="h-full w-[65%] bg-accent rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex justify-between text-xs text-white/70 mb-1"
+                    >
+                      <span>Routing Efficiency</span><span>78%</span>
+                    </div>
+                    <div class="h-1.5 bg-white/20 rounded-full">
+                      <div class="h-full w-[78%] bg-primary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex justify-between text-xs text-white/70 mb-1"
+                    >
+                      <span>Cost Optimization</span><span>55%</span>
+                    </div>
+                    <div class="h-1.5 bg-white/20 rounded-full">
+                      <div
+                        class="h-full w-[55%] bg-yellow-400 rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex justify-between text-xs text-white/70 mb-1"
+                    >
+                      <span>Local Wallets</span><span>40%</span>
+                    </div>
+                    <div class="h-1.5 bg-white/20 rounded-full">
+                      <div class="h-full w-[40%] bg-red-400 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Floating badge -->
+              <div
+                class="absolute -top-4 -right-4 bg-accent text-white rounded-xl px-3 py-2 shadow-lg text-sm font-bold"
+              >
+                <i class="fa-solid fa-arrow-trend-up mr-1"></i>+23% Revenue
+              </div>
+              <!-- Floating pill -->
+              <div
+                class="absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-2"
+              >
+                <div
+                  class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-check text-white text-xs"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-gray-800">
+                    Quick Win Found!
+                  </div>
+                  <div class="text-xs text-gray-500">GrabPay not enabled</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="gradient-bg text-white py-8 no-print">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
+          <div class="stat-item text-center py-4 px-6">
+            <div class="text-4xl font-black mb-1">
+              20<span class="text-accent">+</span>
+            </div>
+            <div class="text-sm text-white/75 font-medium">
+              Years Experience
+            </div>
+          </div>
+          <div class="stat-item text-center py-4 px-6">
+            <div class="text-4xl font-black mb-1">
+              25<span class="text-accent">%</span>
+            </div>
+            <div class="text-sm text-white/75 font-medium">
+              Avg Revenue Increase
+            </div>
+          </div>
+          <div class="stat-item text-center py-4 px-6">
+            <div class="text-4xl font-black mb-1">
+              6<span class="text-accent"></span>
+            </div>
+            <div class="text-sm text-white/75 font-medium">SEA Countries</div>
+          </div>
+          <div class="stat-item text-center py-4 px-6">
+            <div class="text-4xl font-black mb-1">
+              100<span class="text-accent">+</span>
+            </div>
+            <div class="text-sm text-white/75 font-medium">
+              Merchants Helped
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in">
+          <div
+            class="inline-block bg-primary/10 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-4"
+          >
+            Our Services
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Payment Infrastructure Solutions
+          </h2>
+          <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+            From free assessments to full implementation, we cover every stage
+            of your payment optimization journey across Southeast Asia.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1: Assessment -->
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 fade-in"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass-chart text-primary text-2xl"
+              ></i>
+            </div>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-3xl font-black text-gray-900">Free</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Payment Assessment
+            </h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+              Get a comprehensive 6-dimension analysis of your payment stack.
+              Identify gaps, quick wins, and growth opportunities across SEA
+              markets.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>6-dimension payment scorecard</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Coverage & routing analysis</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Cost optimization opportunities</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Priority recommendations</span>
+              </li>
+            </ul>
+            <a
+              href="http://154.43.52.68:3000"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block text-center bg-primary/10 text-primary font-semibold py-3.5 rounded-xl hover:bg-primary hover:text-white transition-all"
+            >
+              Start Assessment <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- Card 2: Implementation (Most Popular) -->
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-xl border-2 border-primary relative fade-in"
+          >
+            <div class="popular-badge">★ MOST POPULAR</div>
+            <div
+              class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-6 shadow-lg"
+            >
+              <i class="fa-solid fa-gears text-white text-2xl"></i>
+            </div>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-3xl font-black text-gray-900">$5,000</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Implementation</h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+              Full-service payment infrastructure setup. From PSP integration to
+              local wallet activation and smart routing optimization.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>PSP integration & setup</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Local wallets (GrabPay, TouchNGo, DANA, etc.)</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Smart routing configuration</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Compliance & PCI setup</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Post-launch 30-day support</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="block text-center gradient-bg text-white font-bold py-3.5 rounded-xl hover:opacity-90 transition-all shadow-md hover:shadow-lg"
+            >
+              Get Started <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- Card 3: Ongoing Support -->
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 fade-in"
+          >
+            <div
+              class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-headset text-secondary text-2xl"></i>
+            </div>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-3xl font-black text-gray-900">$2,000</span>
+              <span class="text-gray-400 text-sm font-medium">/month</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Ongoing Support
+            </h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+              Continuous optimization and monitoring to ensure your payment
+              stack keeps pace with evolving SEA market requirements.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Monthly performance reviews</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Real-time performance monitoring</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>New market expansion setup</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <i
+                  class="fa-solid fa-circle-check text-accent mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Priority issue resolution</span>
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="block text-center bg-secondary/10 text-secondary font-semibold py-3.5 rounded-xl hover:bg-secondary hover:text-white transition-all"
+            >
+              Learn More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ASSESSMENT TOOL ===== -->
+    <section id="assessment" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Content -->
+          <div class="fade-in">
+            <div
+              class="inline-block bg-accent/10 text-accent font-semibold text-sm px-4 py-1.5 rounded-full mb-4"
+            >
+              Free Tool · No Sign-up Required
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Free Payment Systems<br /><span class="gradient-text"
+                >Assessment</span
+              >
+            </h2>
+            <p class="text-lg text-gray-500 mb-8 leading-relaxed">
+              Get a professional analysis of your payment infrastructure in 5
+              minutes. Normally a
+              <strong class="text-gray-700"
+                >$2,000+ consulting engagement</strong
+              >, now available free.
+            </p>
+
+            <div class="space-y-4 mb-10">
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <span class="text-white font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    6-Dimension Scorecard
+                  </div>
+                  <div class="text-gray-500 text-xs mt-0.5">
+                    Coverage, routing, cost, wallets, compliance & conversion
+                    analysis
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <span class="text-white font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    Priority Recommendations
+                  </div>
+                  <div class="text-gray-500 text-xs mt-0.5">
+                    Ranked action items with estimated revenue impact
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <span class="text-white font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    SEA Payment Stack Map
+                  </div>
+                  <div class="text-gray-500 text-xs mt-0.5">
+                    Custom payment method recommendations per market
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <span class="text-white font-bold text-sm">4</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    Quick Wins Report
+                  </div>
+                  <div class="text-gray-500 text-xs mt-0.5">
+                    Immediate actions you can take this week to improve
+                    conversion
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="http://154.43.52.68:3000"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 gradient-bg text-white font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 text-lg"
+            >
+              <i class="fa-solid fa-rocket"></i>
+              Launch Assessment Tool
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Right: Visual card -->
+          <div class="fade-in">
+            <div class="gradient-card border border-primary/20 rounded-2xl p-8">
+              <div class="text-center mb-8">
+                <div
+                  class="w-20 h-20 gradient-bg rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-xl"
+                >
+                  <i class="fa-solid fa-chart-pie text-white text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">
+                  What Markets Are Covered?
+                </h3>
+                <p class="text-gray-500 text-sm mt-1">
+                  Full coverage across all 6 SEA markets
+                </p>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇸🇬</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Singapore
+                    </div>
+                    <div class="text-xs text-gray-400">PayNow, Cards</div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇲🇾</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Malaysia
+                    </div>
+                    <div class="text-xs text-gray-400">TouchNGo, DuitNow</div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇹🇭</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Thailand
+                    </div>
+                    <div class="text-xs text-gray-400">
+                      PromptPay, TrueMoney
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇮🇩</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Indonesia
+                    </div>
+                    <div class="text-xs text-gray-400">DANA, GoPay, OVO</div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇻🇳</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Vietnam
+                    </div>
+                    <div class="text-xs text-gray-400">MoMo, ZaloPay</div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm"
+                >
+                  <span class="text-2xl">🇵🇭</span>
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">
+                      Philippines
+                    </div>
+                    <div class="text-xs text-gray-400">GCash, Maya</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <!-- Left: Logos & Visual -->
+          <div class="fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Deep Regional Expertise<br /><span class="gradient-text"
+                >You Can Trust</span
+              >
+            </h2>
+            <p class="text-gray-500 text-lg mb-6 leading-relaxed">
+              With senior roles at
+              <strong class="text-gray-700">VISA</strong> and
+              <strong class="text-gray-700">PayPal</strong>, and hands-on
+              experience building payment stacks for OTAs, hotels, and airlines
+              across Southeast Asia, we bring institutional knowledge to your
+              business.
+            </p>
+            <p class="text-gray-500 mb-8 leading-relaxed">
+              We understand the nuances of each SEA market — from regulatory
+              environments to consumer payment preferences. Our approach
+              combines global best practices with hyper-local expertise.
+            </p>
+
+            <!-- Industry tags -->
+            <div class="mb-8">
+              <div
+                class="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide"
+              >
+                Industries Served
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >✈ Airlines</span
+                >
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >🏨 Hotels</span
+                >
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >🗺 OTAs</span
+                >
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >🚌 Tour Operators</span
+                >
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >🛒 E-commerce</span
+                >
+                <span
+                  class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full"
+                  >🎫 Ticketing</span
+                >
+              </div>
+            </div>
+
+            <!-- Compliance mention -->
+            <div
+              class="flex items-start gap-3 p-4 bg-accent/5 border border-accent/20 rounded-xl"
+            >
+              <i
+                class="fa-solid fa-shield-halved text-accent text-xl mt-0.5"
+              ></i>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">
+                  Compliance & Security Certified
+                </div>
+                <div class="text-gray-500 text-xs mt-1">
+                  PCI-DSS, 3DS2, MAS regulatory compliance, and local AML
+                  requirements across all SEA jurisdictions.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Experience highlights -->
+          <div class="fade-in space-y-5">
+            <!-- Logo placeholders -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="logo-placeholder h-24">
+                <div class="text-center">
+                  <i
+                    class="fa-brands fa-cc-visa text-4xl text-blue-700 mb-1"
+                  ></i>
+                  <div class="text-xs text-gray-400 font-medium">
+                    Senior Role · 8+ years
+                  </div>
+                </div>
+              </div>
+              <div class="logo-placeholder h-24">
+                <div class="text-center">
+                  <i
+                    class="fa-brands fa-paypal text-4xl text-blue-500 mb-1"
+                  ></i>
+                  <div class="text-xs text-gray-400 font-medium">
+                    Product Lead · 6+ years
+                  </div>
+                </div>
+              </div>
+              <div class="logo-placeholder h-24">
+                <div class="text-center">
+                  <i
+                    class="fa-solid fa-wallet text-4xl text-green-500 mb-1"
+                  ></i>
+                  <div class="text-xs text-gray-400 font-medium">
+                    GrabPay Ecosystem
+                  </div>
+                </div>
+              </div>
+              <div class="logo-placeholder h-24">
+                <div class="text-center">
+                  <i
+                    class="fa-solid fa-plane text-4xl text-purple-500 mb-1"
+                  ></i>
+                  <div class="text-xs text-gray-400 font-medium">
+                    Travel Merchants
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience cards -->
+            <div
+              class="bg-white rounded-xl p-5 shadow-sm border border-gray-100"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-globe text-primary"></i>
+                </div>
+                <div class="font-bold text-gray-900">
+                  Global Networks, Local Insight
+                </div>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Built payment networks processing billions in volume. Know
+                exactly where complexity hides and where the opportunities lie
+                in every SEA market.
+              </p>
+            </div>
+
+            <div
+              class="bg-white rounded-xl p-5 shadow-sm border border-gray-100"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-handshake text-accent"></i>
+                </div>
+                <div class="font-bold text-gray-900">
+                  Vendor-Neutral Advisory
+                </div>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                No PSP affiliate deals. Our recommendations are based purely on
+                what delivers the best outcomes for your business model and
+                markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US BANNER ===== -->
+    <section class="gradient-bg py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white mb-10 fade-in">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3">
+            Why Southeast Asia Merchants Choose Us
+          </h2>
+          <p class="text-white/75 text-base max-w-xl mx-auto">
+            We've seen what works — and what doesn't — across every major SEA
+            market and industry vertical.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 text-white text-center"
+          >
+            <i class="fa-solid fa-bolt text-accent text-3xl mb-3"></i>
+            <div class="font-bold mb-1">Fast Implementation</div>
+            <div class="text-white/70 text-sm">
+              Most setups live in 2–4 weeks, not months
+            </div>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 text-white text-center"
+          >
+            <i class="fa-solid fa-coins text-accent text-3xl mb-3"></i>
+            <div class="font-bold mb-1">Cost Reduction</div>
+            <div class="text-white/70 text-sm">
+              Average 20% reduction in payment processing fees
+            </div>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 text-white text-center"
+          >
+            <i class="fa-solid fa-chart-line text-accent text-3xl mb-3"></i>
+            <div class="font-bold mb-1">Revenue Growth</div>
+            <div class="text-white/70 text-sm">
+              15–25% revenue uplift from better conversion rates
+            </div>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 text-white text-center"
+          >
+            <i class="fa-solid fa-users text-accent text-3xl mb-3"></i>
+            <div class="font-bold mb-1">Dedicated Support</div>
+            <div class="text-white/70 text-sm">
+              Direct access to senior consultants, not junior staff
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in">
+          <div
+            class="inline-block bg-primary/10 text-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-4"
+          >
+            Get In Touch
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Start Your Payment Transformation
+          </h2>
+          <p class="text-lg text-gray-500 max-w-xl mx-auto">
+            Tell us about your business and we'll outline a tailored
+            optimization roadmap — usually within 24 hours.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-12">
+          <!-- Contact Info (2 cols) -->
+          <div class="lg:col-span-2 fade-in space-y-6">
+            <!-- Quick Response Badge -->
+            <div class="bg-accent/10 border border-accent/20 rounded-2xl p-5">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-clock text-white text-sm"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 text-sm">
+                    ⚡ Quick Response Guarantee
+                  </div>
+                  <div class="text-gray-600 text-sm mt-1">
+                    We respond to all inquiries within
+                    <strong>24 hours</strong>. For urgent matters, WhatsApp us
+                    directly for immediate assistance.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <i class="fa-solid fa-envelope text-white text-sm"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-xs text-gray-400 font-medium uppercase tracking-wide"
+                  >
+                    Email
+                  </div>
+                  <a
+                    href="mailto:ebiya.sg@gmail.com"
+                    class="font-semibold text-gray-900 hover:text-primary transition-colors text-sm"
+                    >ebiya.sg@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <i class="fa-brands fa-whatsapp text-white text-sm"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-xs text-gray-400 font-medium uppercase tracking-wide"
+                  >
+                    WhatsApp
+                  </div>
+                  <a
+                    href="https://wa.me/6587776638"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-gray-900 hover:text-green-600 transition-colors text-sm"
+                    >+65 8777 6638</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <i class="fa-brands fa-telegram text-white text-sm"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-xs text-gray-400 font-medium uppercase tracking-wide"
+                  >
+                    Telegram
+                  </div>
+                  <a
+                    href="https://t.me/TheSignalsLab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-gray-900 hover:text-blue-600 transition-colors text-sm"
+                    >@TheSignalsLab</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 shadow"
+                >
+                  <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-xs text-gray-400 font-medium uppercase tracking-wide"
+                  >
+                    Office
+                  </div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    55 Changi Road, Unit B1-01
+                  </div>
+                  <div class="text-gray-500 text-xs">Singapore 419976</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct CTAs -->
+            <div class="space-y-3 pt-2">
+              <a
+                href="https://wa.me/6587776638?text=Hi%2C%20I%27m%20interested%20in%20payment%20consulting%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3.5 rounded-xl transition-all shadow"
+              >
+                <i class="fa-brands fa-whatsapp text-lg"></i>Chat on WhatsApp
+              </a>
+              <a
+                href="http://154.43.52.68:3000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 w-full gradient-bg hover:opacity-90 text-white font-semibold py-3.5 rounded-xl transition-all shadow"
+              >
+                <i class="fa-solid fa-rocket"></i>Start Free Assessment
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form (3 cols) -->
+          <div class="lg:col-span-3 fade-in">
+            <form
+              id="contact-form"
+              class="bg-gray-50 rounded-2xl p-8 border border-gray-100"
+              novalidate
+            >
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="sm:col-span-2">
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Company Name *</label
+                  >
+                  <input
+                    type="text"
+                    name="company"
+                    required
+                    placeholder="e.g. Horizon Travel Group"
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Your Name *</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Full name"
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@company.com"
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Business Type *</label
+                  >
+                  <select
+                    name="business_type"
+                    required
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled selected>
+                      Select your industry
+                    </option>
+                    <option value="OTA">OTA (Online Travel Agency)</option>
+                    <option value="Hotel">Hotel / Accommodation</option>
+                    <option value="Tour Operator">Tour Operator</option>
+                    <option value="Airline">Airline</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Monthly Transaction Volume *</label
+                  >
+                  <select
+                    name="volume"
+                    required
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled selected>
+                      Select volume range
+                    </option>
+                    <option value="under-50k">Under $50K</option>
+                    <option value="50k-200k">$50K – $200K</option>
+                    <option value="200k-1m">$200K – $1M</option>
+                    <option value="1m+">$1M+</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2"
+                    >Tell Us About Your Challenges</label
+                  >
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="What payment problems are you facing? Which markets are you targeting? What's your current setup?"
+                    class="form-input w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all resize-none"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mt-6">
+                <button
+                  type="submit"
+                  class="w-full gradient-bg text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-base flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+                  Send Message — We'll Respond Within 24 Hours
+                </button>
+              </div>
+              <p class="text-center text-xs text-gray-400 mt-4">
+                <i class="fa-solid fa-lock mr-1"></i>Your information is kept
+                strictly confidential. No spam, ever.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-white py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+          <!-- Brand -->
+          <div class="lg:col-span-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center shadow-md"
+              >
+                <i class="fa-solid fa-credit-card text-white text-base"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white">Ebiya.sg</div>
+                <div class="text-xs text-gray-400">
+                  Payment Systems Consulting
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              20+ years of payment expertise helping Southeast Asia merchants
+              grow revenue through optimized payment infrastructure.
+            </p>
+            <div class="flex items-center gap-1">
+              <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+              <span class="text-xs text-gray-400"
+                >Based in Singapore · Serving all SEA</span
+              >
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4
+              class="font-bold text-white text-sm uppercase tracking-wide mb-4"
+            >
+              Services
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="http://154.43.52.68:3000"
+                  target="_blank"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+                  ><i
+                    class="fa-solid fa-arrow-right text-xs text-primary/60"
+                  ></i
+                  >Free Assessment Tool</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+                  ><i
+                    class="fa-solid fa-arrow-right text-xs text-primary/60"
+                  ></i
+                  >Payment Assessment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+                  ><i
+                    class="fa-solid fa-arrow-right text-xs text-primary/60"
+                  ></i
+                  >Implementation ($5,000)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+                  ><i
+                    class="fa-solid fa-arrow-right text-xs text-primary/60"
+                  ></i
+                  >Ongoing Support ($2k/mo)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+                  ><i
+                    class="fa-solid fa-arrow-right text-xs text-primary/60"
+                  ></i
+                  >Book Consultation</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Markets -->
+          <div>
+            <h4
+              class="font-bold text-white text-sm uppercase tracking-wide mb-4"
+            >
+              Markets Served
+            </h4>
+            <ul class="space-y-2.5">
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇸🇬</span> Singapore
+              </li>
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇲🇾</span> Malaysia
+              </li>
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇹🇭</span> Thailand
+              </li>
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇮🇩</span> Indonesia
+              </li>
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇻🇳</span> Vietnam
+              </li>
+              <li class="text-gray-400 text-sm flex items-center gap-2">
+                <span>🇵🇭</span> Philippines
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4
+              class="font-bold text-white text-sm uppercase tracking-wide mb-4"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="mailto:ebiya.sg@gmail.com"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-start gap-2"
+                >
+                  <i
+                    class="fa-solid fa-envelope mt-0.5 text-primary/60 flex-shrink-0"
+                  ></i
+                  >ebiya.sg@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/6587776638"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-start gap-2"
+                >
+                  <i
+                    class="fa-brands fa-whatsapp mt-0.5 text-green-500/80 flex-shrink-0"
+                  ></i
+                  >+65 8777 6638
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://t.me/TheSignalsLab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white text-sm transition-colors flex items-start gap-2"
+                >
+                  <i
+                    class="fa-brands fa-telegram mt-0.5 text-blue-400/80 flex-shrink-0"
+                  ></i
+                  >@TheSignalsLab
+                </a>
+              </li>
+              <li>
+                <div class="text-gray-400 text-sm flex items-start gap-2">
+                  <i
+                    class="fa-solid fa-location-dot mt-0.5 text-primary/60 flex-shrink-0"
+                  ></i>
+                  <span>55 Changi Road, Unit B1-01<br />Singapore</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="text-gray-500 text-sm">
+            &copy; 2026 Ebiya.sg Payment Consulting. All rights reserved.
+          </div>
+          <div class="flex items-center gap-4 text-xs text-gray-600">
+            <span class="flex items-center gap-1.5"
+              ><i class="fa-solid fa-shield-halved text-accent"></i>PCI-DSS
+              Compliant Advisory</span
+            >
+            <span class="text-gray-700">·</span>
+            <span class="flex items-center gap-1.5"
+              ><i class="fa-solid fa-lock text-accent"></i>Confidential
+              Engagements</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== SUCCESS MODAL ===== -->
+    <div
+      id="success-modal"
+      class="fixed inset-0 z-[100] flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        id="modal-backdrop"
+      ></div>
+      <div
+        class="relative bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center"
+      >
+        <div
+          class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4"
+        >
+          <i class="fa-solid fa-circle-check text-accent text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+        <p class="text-gray-500 text-sm mb-2">
+          Thank you for reaching out. We'll get back to you within
+          <strong>24 hours</strong>.
+        </p>
+        <p class="text-gray-400 text-xs mb-6">
+          For urgent matters, WhatsApp us directly at
+          <strong>+65 8777 6638</strong>.
+        </p>
+        <button
+          id="close-modal"
+          class="w-full gradient-bg text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-all"
+        >
+          Got it, thanks!
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+      // ---- Mobile menu ----
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        menuIcon.className = mobileMenu.classList.contains("open")
+          ? "fa-solid fa-xmark text-xl"
+          : "fa-solid fa-bars text-xl";
+      });
+
+      document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuIcon.className = "fa-solid fa-bars text-xl";
+        });
+      });
+
+      // ---- Scroll progress ----
+      window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const docHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        document.getElementById("scroll-progress").style.width = progress + "%";
+      });
+
+      // ---- Header shadow on scroll ----
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 20) {
+          header.classList.add("shadow-md");
+        } else {
+          header.classList.remove("shadow-md");
+        }
+      });
+
+      // ---- Intersection Observer for fade-in ----
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      fadeEls.forEach((el) => observer.observe(el));
+
+      // ---- Contact form ----
+      const form = document.getElementById("contact-form");
+      const modal = document.getElementById("success-modal");
+      const closeModal = document.getElementById("close-modal");
+      const modalBackdrop = document.getElementById("modal-backdrop");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        const required = form.querySelectorAll("[required]");
+        let valid = true;
+        required.forEach((field) => {
+          field.classList.remove("border-red-400");
+          if (!field.value.trim()) {
+            field.classList.add("border-red-400");
+            valid = false;
+          }
+        });
+
+        if (!valid) {
+          const firstInvalid = form.querySelector(".border-red-400");
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Email validation
+        const emailField = form.querySelector('[name="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailField.value.trim())) {
+          emailField.classList.add("border-red-400");
+          emailField.focus();
+          return;
+        }
+
+        // Show modal
+        modal.classList.remove("hidden");
+        form.reset();
+      });
+
+      closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+      modalBackdrop.addEventListener("click", () =>
+        modal.classList.add("hidden"),
+      );
+
+      // ---- Remove red border on input ----
+      form.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.addEventListener("input", () =>
+          field.classList.remove("border-red-400"),
+        );
+      });
+
+      // ---- Smooth anchor scroll offset for fixed header ----
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            const offset = 72;
+            const top =
+              target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

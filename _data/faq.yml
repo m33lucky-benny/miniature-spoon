@@ -1,0 +1,17 @@
+- question: "How long does an implementation engagement take?"
+  answer: "Most implementations are complete within 4–6 weeks, depending on PSP complexity and the number of markets. We provide a detailed timeline before any engagement begins."
+
+- question: "Do I need to change my existing payment provider?"
+  answer: "Not necessarily. We often work within your existing stack to improve routing, reduce costs, and add local methods. Sometimes a PSP change is recommended, but only when the numbers clearly justify it."
+
+- question: "What industries do you specialise in?"
+  answer: "Our deepest experience is in travel (airlines, hotels, OTAs), e-commerce, marketplace platforms, and ticketing — all high-volume, margin-sensitive segments with complex SEA payment needs."
+
+- question: "Is the free assessment genuinely free?"
+  answer: "Yes. No credit card, no sign-up, no sales call required. You get a full analysis of your current payment stack with actionable recommendations."
+
+- question: "What does the $5,000 implementation fee cover?"
+  answer: "Discovery, PSP selection, integration support, routing logic, local wallet setup, compliance checklist, and 30 days of post-launch support. Scope is agreed in writing before we start."
+
+- question: "Can you help with chargebacks and fraud?"
+  answer: "Yes. Chargeback management, dispute workflows, and fraud rule configuration are included in both implementation engagements and ongoing support retainers."

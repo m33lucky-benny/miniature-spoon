@@ -1,0 +1,140 @@
+// =============================================================================
+// BASE — reset, html, body, global type
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(#{$header-height} + #{$space-4});
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $text-base;
+  font-weight: $fw-normal;
+  line-height: $lh-relaxed;
+  color: $c-text;
+  background-color: $c-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  letter-spacing: $ls-snug;
+  color: $c-text;
+}
+
+h1 { font-size: clamp($text-3xl, 5vw, $text-5xl); }
+h2 { font-size: clamp($text-2xl, 4vw, $text-4xl); }
+h3 { font-size: clamp($text-xl,  3vw, $text-2xl); }
+h4 { font-size: $text-xl; }
+h5 { font-size: $text-lg; }
+h6 { font-size: $text-base; }
+
+p {
+  line-height: $lh-relaxed;
+  color: $c-text-muted;
+
+  &:not(:last-child) {
+    margin-bottom: $space-4;
+  }
+}
+
+a {
+  color: $c-accent;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: lighten($c-accent, 15%);
+  }
+
+  @include focus-ring;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+strong, b {
+  font-weight: $fw-semibold;
+  color: $c-text;
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: $text-sm;
+}
+
+code, pre {
+  font-family: $font-mono;
+  font-size: 0.9em;
+}
+
+hr {
+  @include section-divider;
+}
+
+// Focus styles — visible only for keyboard nav
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid $c-accent;
+  outline-offset: 2px;
+}
+
+// Selection
+::selection {
+  background: $c-accent-dim;
+  color: $c-text;
+}
+
+// Scrollbar (webkit)
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $c-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $c-surface-2;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $c-border;
+  }
+}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="page-hero__inner">
+    {% if page.label %}
+    <p class="page-hero__label">
+      <span class="accent-dot" aria-hidden="true"></span>
+      {{ page.label }}
+    </p>
+    {% endif %}
+    <h1 class="page-hero__title">{{ page.title }}</h1>
+    {% if page.lead %}
+    <p class="page-hero__lead">{{ page.lead }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{{ content }}

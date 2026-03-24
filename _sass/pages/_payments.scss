@@ -1,0 +1,41 @@
+// =============================================================================
+// PAGE — PAYMENTS (detail / technical)
+// =============================================================================
+
+.payments-methods {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-4;
+
+  @include sm { grid-template-columns: repeat(2, 1fr); }
+  @include lg { grid-template-columns: repeat(3, 1fr); }
+}
+
+.method-row {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding: $space-4 $space-5;
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-lg;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $c-accent;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: $text-sm;
+    font-weight: $fw-medium;
+    color: $c-text;
+  }
+
+  &__type {
+    font-size: $text-xs;
+    color: $c-text-muted;
+    margin-top: 2px;
+  }
+}

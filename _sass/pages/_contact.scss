@@ -1,0 +1,34 @@
+// =============================================================================
+// PAGE — CONTACT
+// =============================================================================
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-12;
+  align-items: start;
+
+  @include lg {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+.contact-info__heading {
+  font-size: $text-xl;
+  font-weight: $fw-semibold;
+  color: $c-text;
+  margin-bottom: $space-2;
+}
+
+.contact-info__lead {
+  font-size: $text-sm;
+  color: $c-text-muted;
+  margin-bottom: $space-6;
+}
+
+.contact-info__actions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-top: $space-6;
+}

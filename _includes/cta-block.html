@@ -1,0 +1,48 @@
+{% comment %}
+  cta-block.html
+  Parameters (all optional, fall back to defaults):
+    include.title   — headline
+    include.body    — subtext
+    include.btn_label, include.btn_url, include.btn_external
+    include.btn2_label, include.btn2_url
+{% endcomment %}
+
+{% assign cta_title    = include.title    | default: "Ready to fix your payment stack?" %}
+{% assign cta_body     = include.body     | default: "Start with a free, no-obligation assessment. Know exactly where you're losing revenue in 15 minutes." %}
+{% assign btn_label    = include.btn_label  | default: "Start Free Assessment" %}
+{% assign btn_url      = include.btn_url    | default: site.data.site.assessment_url %}
+{% assign btn_external = include.btn_external | default: true %}
+{% assign btn2_label   = include.btn2_label | default: "Book a Call" %}
+{% assign btn2_url     = include.btn2_url   | default: "/contact/" %}
+
+<section class="section" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <p class="cta-block__eyebrow badge">
+        <span class="accent-dot" aria-hidden="true"></span>
+        Get started today
+      </p>
+
+      <h2 class="cta-block__title" id="cta-title">
+        {{ cta_title | replace: "payment", '<span class="accent">payment</span>' }}
+      </h2>
+
+      <p class="cta-block__body">{{ cta_body }}</p>
+
+      <div class="cta-block__actions">
+        {% if btn_external %}
+        <a href="{{ btn_url }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+          {{ btn_label }}
+        </a>
+        {% else %}
+        <a href="{{ btn_url | relative_url }}" class="btn btn--primary btn--lg">
+          {{ btn_label }}
+        </a>
+        {% endif %}
+        <a href="{{ btn2_url | relative_url }}" class="btn btn--secondary btn--lg">
+          {{ btn2_label }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

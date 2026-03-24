@@ -1,0 +1,21 @@
+// =============================================================================
+// PAGE — HOME
+// =============================================================================
+
+// All home-specific layout overrides.
+// Component styles live in _sass/components/.
+
+.home-services {
+  // Ensure the featured card looks elevated relative to siblings
+  .pricing-card--featured {
+    position: relative;
+
+    @include lg {
+      transform: translateY(-8px);
+
+      &:hover {
+        transform: translateY(-12px);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+
+    <!-- Logo -->
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="{{ site.data.site.name }} home">
+      <span class="site-logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V10h16v8zm0-10H4V6h16v2z"/>
+        </svg>
+      </span>
+      <span class="site-logo__text">{{ site.data.site.name }}</span>
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="site-nav" aria-label="Primary navigation">
+      {% for item in site.data.nav %}
+      <a href="{{ item.url | relative_url }}" class="site-nav__link">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <!-- Header actions -->
+    <div class="site-header__actions">
+      <a href="{{ site.data.site.assessment_url }}" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">
+        Free Assessment
+      </a>
+      <!-- Hamburger -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  {% for item in site.data.nav %}
+  <a href="{{ item.url | relative_url }}" class="mobile-nav__link">{{ item.label }}</a>
+  {% endfor %}
+  <div class="mobile-nav__cta">
+    <a href="{{ site.data.site.assessment_url }}" class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer">
+      Start Free Assessment
+    </a>
+  </div>
+</nav>

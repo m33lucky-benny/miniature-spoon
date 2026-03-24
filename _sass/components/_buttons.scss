@@ -1,0 +1,123 @@
+// =============================================================================
+// BUTTONS
+// =============================================================================
+
+.btn {
+  @include button-base;
+
+  // --- Primary (accent fill) ---
+  &--primary {
+    background: linear-gradient(135deg, $c-accent 0%, darken($c-accent, 10%) 100%);
+    color: #fff;
+    box-shadow: $shadow-accent;
+
+    &:hover {
+      box-shadow: $shadow-accent-lg;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    &:active {
+      transform: scale(0.97);
+      box-shadow: $shadow-accent;
+    }
+  }
+
+  // --- Secondary (outlined) ---
+  &--secondary {
+    background: transparent;
+    color: $c-text;
+    border: 1px solid $c-border;
+
+    &:hover {
+      border-color: $c-accent;
+      color: $c-accent;
+      background: $c-accent-dim;
+    }
+  }
+
+  // --- Ghost (text-like) ---
+  &--ghost {
+    background: transparent;
+    color: $c-text-muted;
+    border: none;
+
+    &:hover {
+      color: $c-text;
+      background: $c-surface-1;
+    }
+  }
+
+  // --- Sizes ---
+  &--sm {
+    font-size: $text-sm;
+    padding: $space-2 $space-4;
+  }
+
+  &--lg {
+    font-size: $text-lg;
+    padding: $space-4 $space-8;
+  }
+
+  &--xl {
+    font-size: $text-xl;
+    padding: $space-5 $space-10;
+  }
+
+  // --- Full width ---
+  &--full {
+    width: 100%;
+  }
+
+  // --- Disabled ---
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // --- Loading state ---
+  &.is-loading {
+    pointer-events: none;
+    opacity: 0.7;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #fff;
+      border-radius: $radius-full;
+      display: inline-block;
+      animation: btn-spin 0.7s linear infinite;
+      margin-left: $space-2;
+    }
+  }
+
+  // --- Icon button ---
+  &--icon {
+    padding: $space-3;
+    border-radius: $radius-md;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  // SVG inside button
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

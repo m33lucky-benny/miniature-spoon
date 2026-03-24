@@ -1,0 +1,250 @@
+// =============================================================================
+// CARDS
+// =============================================================================
+
+// Base card
+.card {
+  @include card-base;
+
+  &--hover {
+    @include card-hover;
+  }
+
+  &--surface-2 {
+    background: $c-surface-2;
+  }
+
+  &--accent {
+    border-color: rgba($c-accent, 0.4);
+    box-shadow: inset 0 0 0 1px rgba($c-accent, 0.1), $shadow-accent;
+  }
+}
+
+// =============================================================================
+// Feature card (icon + title + body)
+// =============================================================================
+.feature-card {
+  @include card-base;
+  @include card-hover;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  &__icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: $c-accent-dim;
+    border: 1px solid rgba($c-accent, 0.2);
+    border-radius: $radius-lg;
+    @include flex-center;
+    flex-shrink: 0;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: $c-accent;
+    }
+  }
+
+  &__title {
+    font-size: $text-lg;
+    font-weight: $fw-semibold;
+    color: $c-text;
+    line-height: $lh-snug;
+  }
+
+  &__body {
+    font-size: $text-sm;
+    color: $c-text-muted;
+    line-height: $lh-relaxed;
+    margin: 0;
+  }
+}
+
+// =============================================================================
+// Pricing / Service cards
+// =============================================================================
+.pricing-card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  transition: transform $transition-base, border-color $transition-base,
+              box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &--featured {
+    border-color: rgba($c-accent, 0.5);
+    background: linear-gradient(160deg, $c-surface-1 0%, rgba($c-accent, 0.04) 100%);
+    box-shadow: $shadow-accent;
+    position: relative;
+
+    &:hover {
+      box-shadow: $shadow-accent-lg;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, $c-accent, darken($c-accent, 10%));
+    color: #fff;
+    font-size: $text-xs;
+    font-weight: $fw-bold;
+    letter-spacing: $ls-wider;
+    text-transform: uppercase;
+    padding: $space-1 $space-4;
+    border-radius: $radius-full;
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-size: $text-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: $ls-wider;
+    text-transform: uppercase;
+    color: $c-text-muted;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: $space-2;
+  }
+
+  &__amount {
+    font-size: clamp($text-3xl, 4vw, $text-4xl);
+    font-weight: $fw-black;
+    letter-spacing: $ls-tight;
+    color: $c-text;
+
+    .pricing-card--featured & {
+      @include gradient-text;
+    }
+  }
+
+  &__note {
+    font-size: $text-sm;
+    color: $c-text-muted;
+  }
+
+  &__desc {
+    font-size: $text-sm;
+    color: $c-text-muted;
+    line-height: $lh-relaxed;
+    margin: 0;
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid $c-border;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    flex: 1;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    font-size: $text-sm;
+    color: $c-text-muted;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $c-accent;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+  }
+
+  &__cta {
+    margin-top: auto;
+  }
+}
+
+// =============================================================================
+// Market card
+// =============================================================================
+.market-card {
+  @include card-base;
+  background: $c-surface-2;
+  padding: $space-5;
+
+  &__flag {
+    font-size: $text-2xl;
+    margin-bottom: $space-3;
+    display: block;
+    line-height: 1;
+  }
+
+  &__country {
+    font-size: $text-base;
+    font-weight: $fw-semibold;
+    color: $c-text;
+    margin-bottom: $space-2;
+  }
+
+  &__methods {
+    font-size: $text-xs;
+    color: $c-text-muted;
+    line-height: $lh-relaxed;
+  }
+}
+
+// =============================================================================
+// Step card (How it works)
+// =============================================================================
+.step-card {
+  display: flex;
+  gap: $space-5;
+  align-items: flex-start;
+  padding: $space-6;
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-xl;
+  transition: border-color $transition-base;
+
+  &:hover {
+    border-color: rgba($c-accent, 0.3);
+  }
+
+  &__num {
+    width: 40px;
+    height: 40px;
+    background: $c-accent-dim;
+    border: 1px solid rgba($c-accent, 0.25);
+    border-radius: $radius-lg;
+    @include flex-center;
+    flex-shrink: 0;
+    font-size: $text-base;
+    font-weight: $fw-black;
+    @include gradient-text;
+  }
+
+  &__content {}
+
+  &__title {
+    font-size: $text-base;
+    font-weight: $fw-semibold;
+    color: $c-text;
+    margin-bottom: $space-2;
+  }
+
+  &__body {
+    font-size: $text-sm;
+    color: $c-text-muted;
+    line-height: $lh-relaxed;
+    margin: 0;
+  }
+}

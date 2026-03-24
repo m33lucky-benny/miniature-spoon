@@ -1,0 +1,25 @@
+{% comment %}
+  faq-item.html
+  Parameters: include.question, include.answer, include.index
+{% endcomment %}
+<div class="faq-item" id="faq-{{ include.index }}">
+  <button
+    class="faq-item__question"
+    aria-expanded="false"
+    aria-controls="faq-answer-{{ include.index }}"
+    id="faq-btn-{{ include.index }}"
+  >
+    <span>{{ include.question }}</span>
+    <span class="faq-item__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </span>
+  </button>
+  <div
+    class="faq-item__answer"
+    id="faq-answer-{{ include.index }}"
+    role="region"
+    aria-labelledby="faq-btn-{{ include.index }}"
+  >
+    <div class="faq-item__answer-inner">{{ include.answer }}</div>
+  </div>
+</div>

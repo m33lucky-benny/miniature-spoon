@@ -1,0 +1,51 @@
+- id: assessment
+  name: "Free Assessment"
+  price: "Free"
+  price_note: "No sign-up required"
+  badge: ""
+  featured: false
+  description: "Understand exactly where your payment stack is leaking revenue."
+  features:
+    - "6-dimension coverage analysis"
+    - "Routing & acceptance audit"
+    - "Cost benchmarking"
+    - "Actionable recommendations"
+    - "SEA market gap review"
+  cta_label: "Start Free Assessment"
+  cta_url: "https://assess.ebiya.sg"
+  cta_external: true
+
+- id: implementation
+  name: "Implementation"
+  price: "$5,000"
+  price_note: "one-time engagement"
+  badge: "Most Popular"
+  featured: true
+  description: "End-to-end build of a high-performing payments stack for your market."
+  features:
+    - "PSP selection & integration"
+    - "Local wallet enablement"
+    - "Smart routing rules"
+    - "Compliance & risk setup"
+    - "30-day post-launch support"
+    - "Acceptance rate guarantee"
+  cta_label: "Get Started"
+  cta_url: "/contact/"
+  cta_external: false
+
+- id: support
+  name: "Ongoing Support"
+  price: "$2,000"
+  price_note: "per month"
+  badge: ""
+  featured: false
+  description: "Continuous optimisation and expert support as your business scales."
+  features:
+    - "Monthly performance reviews"
+    - "Acceptance monitoring"
+    - "New market expansion"
+    - "Chargeback management"
+    - "Priority response SLA"
+  cta_label: "Enquire Now"
+  cta_url: "/contact/"
+  cta_external: false

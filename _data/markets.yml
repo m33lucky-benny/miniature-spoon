@@ -1,0 +1,23 @@
+- country: "Singapore"
+  code: "SG"
+  methods: "PayNow, Cards, GrabPay, FavePay"
+
+- country: "Malaysia"
+  code: "MY"
+  methods: "DuitNow, Touch 'n Go, Cards, ShopeePay"
+
+- country: "Thailand"
+  code: "TH"
+  methods: "PromptPay, TrueMoney, Cards, LINE Pay"
+
+- country: "Indonesia"
+  code: "ID"
+  methods: "GoPay, OVO, QRIS, VA Transfer, Cards"
+
+- country: "Philippines"
+  code: "PH"
+  methods: "GCash, Maya, Cards, InstaPay"
+
+- country: "Vietnam"
+  code: "VN"
+  methods: "VNPay, MoMo, ZaloPay, Cards"

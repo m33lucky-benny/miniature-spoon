@@ -1,0 +1,171 @@
+// =============================================================================
+// FORMS
+// =============================================================================
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.form-label {
+  font-size: $text-sm;
+  font-weight: $fw-medium;
+  color: $c-text;
+}
+
+.form-label--required::after {
+  content: " *";
+  color: $c-accent;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: $c-surface-2;
+  border: 1px solid $c-border;
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  font-family: $font-sans;
+  font-size: $text-base;
+  color: $c-text;
+  line-height: $lh-normal;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::placeholder {
+    color: $c-text-subtle;
+  }
+
+  &:hover {
+    border-color: $c-text-subtle;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $c-accent;
+    box-shadow: 0 0 0 3px $c-accent-dim;
+  }
+
+  &.is-invalid {
+    border-color: $c-error;
+    box-shadow: 0 0 0 3px rgba($c-error, 0.1);
+  }
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23888'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $space-3 center;
+  padding-right: $space-10;
+  cursor: pointer;
+
+  option {
+    background: $c-surface-1;
+    color: $c-text;
+  }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-help {
+  font-size: $text-xs;
+  color: $c-text-muted;
+}
+
+.form-error {
+  font-size: $text-xs;
+  color: $c-error;
+  display: none;
+
+  .form-group.has-error & {
+    display: block;
+  }
+}
+
+// Form layout grids
+.form-grid {
+  display: grid;
+  gap: $space-5;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--full {
+    grid-column: 1 / -1;
+  }
+}
+
+// Contact form wrapper
+.contact-form {
+  @include card-base;
+  padding: $space-8;
+
+  @include max-sm {
+    padding: $space-6 $space-4;
+  }
+
+  &__title {
+    font-size: $text-xl;
+    font-weight: $fw-semibold;
+    color: $c-text;
+    margin-bottom: $space-6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    margin-top: $space-6;
+
+    @include sm {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__note {
+    font-size: $text-xs;
+    color: $c-text-muted;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: $c-text-subtle;
+      vertical-align: middle;
+      margin-right: $space-1;
+    }
+  }
+}
+
+// Success / error messages
+.form-message {
+  display: none;
+  padding: $space-4 $space-5;
+  border-radius: $radius-lg;
+  font-size: $text-sm;
+  line-height: $lh-normal;
+  margin-top: $space-4;
+
+  &--success {
+    background: rgba($c-success, 0.1);
+    border: 1px solid rgba($c-success, 0.3);
+    color: $c-success;
+  }
+
+  &--error {
+    background: rgba($c-error, 0.1);
+    border: 1px solid rgba($c-error, 0.3);
+    color: $c-error;
+  }
+
+  &.is-visible {
+    display: block;
+  }
+}

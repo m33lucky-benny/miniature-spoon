@@ -1,0 +1,44 @@
+title: "Ebiya.sg — Payments Expertise"
+description: "Southeast Asia payment systems consulting. 20+ years across VISA, PayPal, and regional wallets."
+url: "https://payments.ebiya.sg"
+baseurl: ""
+
+author:
+  name: "Ebiya.sg"
+  email: "hello@ebiya.sg"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Plugins (all GitHub Pages safe)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

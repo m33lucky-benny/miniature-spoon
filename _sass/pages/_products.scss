@@ -1,0 +1,17 @@
+// =============================================================================
+// PAGE — PRODUCTS / SERVICES
+// =============================================================================
+
+// Pricing table is handled by .pricing-card in _cards.scss
+// This file holds layout wrappers specific to the services page.
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-8;
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+}
