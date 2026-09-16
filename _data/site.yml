@@ -5,7 +5,7 @@ email: "ebiya.sg@gmail.com"
 whatsapp: "https://wa.me/6589002228"
 telegram: "https://t.me/ebiya_bot"
 address: "Singapore"
-assessment_url: "https://assess.ebiya.sg"
+assessment_url: "/assess/"
 
 social:
   linkedin: "https://linkedin.com/company/ebiyasg"

@@ -1,0 +1,582 @@
+@use "../core" as *;
+
+// =============================================================================
+// ASSESS PAGE
+// =============================================================================
+
+.assess-page {
+  min-height: calc(100vh - 8rem);
+  padding: $space-12 0 $space-16;
+  display: flex;
+  align-items: flex-start;
+}
+
+.assess-app {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.assess-noscript {
+  text-align: center;
+  color: $c-text-muted;
+  padding: $space-8;
+}
+
+// ---------------------------------------------------------------------------
+// Progress bar
+// ---------------------------------------------------------------------------
+
+.assess-progress {
+  width: 100%;
+  height: 4px;
+  background: $c-surface-2;
+  border-radius: $radius-full;
+  margin-bottom: $space-8;
+  overflow: hidden;
+}
+
+.assess-progress__fill {
+  height: 100%;
+  background: $c-accent;
+  border-radius: $radius-full;
+  transition: width 0.4s ease;
+}
+
+// ---------------------------------------------------------------------------
+// Badge
+// ---------------------------------------------------------------------------
+
+.assess-badge {
+  display: inline-block;
+  font-size: $text-xs;
+  font-weight: $fw-semibold;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  color: $c-accent;
+  background: rgba($c-accent, 0.1);
+  border: 1px solid rgba($c-accent, 0.25);
+  border-radius: $radius-full;
+  padding: $space-1 $space-3;
+  margin-bottom: $space-4;
+}
+
+// ---------------------------------------------------------------------------
+// Step label
+// ---------------------------------------------------------------------------
+
+.assess-step-label {
+  font-size: $text-sm;
+  color: $c-text-muted;
+  font-weight: $fw-medium;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  margin-bottom: $space-2;
+}
+
+// ---------------------------------------------------------------------------
+// Welcome screen
+// ---------------------------------------------------------------------------
+
+.assess-welcome {
+  text-align: center;
+  padding: $space-8 0;
+}
+
+.assess-welcome__title {
+  font-size: clamp($text-3xl, 5vw, $text-5xl);
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  margin-bottom: $space-4;
+  color: $c-text;
+}
+
+.assess-welcome__sub {
+  font-size: $text-lg;
+  color: $c-text-muted;
+  max-width: 480px;
+  margin: 0 auto $space-12;
+}
+
+.assess-welcome__list {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: $space-3;
+  text-align: left;
+  margin: 0 auto $space-10;
+  padding: $space-6 $space-8;
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-xl;
+
+  li {
+    font-size: $text-sm;
+    color: $c-text-muted;
+    padding-left: $space-6;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: rgba($c-accent, 0.15);
+      border-radius: $radius-full;
+      border: 2px solid $c-accent;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Card (shared wrapper for lead + question)
+// ---------------------------------------------------------------------------
+
+.assess-card {
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-2xl;
+  padding: $space-8;
+
+  @include md {
+    padding: $space-10 $space-12;
+  }
+}
+
+.assess-card__title {
+  font-size: clamp($text-xl, 3vw, $text-2xl);
+  font-weight: $fw-semibold;
+  color: $c-text;
+  margin-bottom: $space-6;
+  line-height: $lh-tight;
+}
+
+// ---------------------------------------------------------------------------
+// Form
+// ---------------------------------------------------------------------------
+
+.assess-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Options (radio / checkbox)
+// ---------------------------------------------------------------------------
+
+.assess-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2;
+  margin-bottom: $space-6;
+
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.assess-options--yesno {
+  grid-template-columns: 1fr 1fr;
+  max-width: 320px;
+}
+
+.assess-options--multi {
+  grid-template-columns: 1fr;
+
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.assess-option {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  background: $c-surface-2;
+  border: 1px solid $c-border;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  font-size: $text-sm;
+  color: $c-text-muted;
+  transition: border-color $transition-fast, background $transition-fast, color $transition-fast;
+  user-select: none;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &:hover {
+    border-color: rgba($c-accent, 0.5);
+    color: $c-text;
+  }
+
+  &--selected {
+    border-color: $c-accent;
+    background: rgba($c-accent, 0.08);
+    color: $c-text;
+  }
+
+  &--lg {
+    justify-content: center;
+    padding: $space-4 $space-6;
+    font-size: $text-base;
+    font-weight: $fw-medium;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Nav row
+// ---------------------------------------------------------------------------
+
+.assess-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $space-10;
+  padding-top: $space-6;
+  border-top: 1px solid $c-border;
+  gap: $space-3;
+}
+
+// ---------------------------------------------------------------------------
+// Error
+// ---------------------------------------------------------------------------
+
+.assess-error {
+  font-size: $text-sm;
+  color: #f87171;
+  margin-top: $space-2;
+  margin-bottom: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Report
+// ---------------------------------------------------------------------------
+
+.assess-report {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.assess-report__header {
+  text-align: center;
+  padding: $space-8;
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-2xl;
+}
+
+.assess-report__title {
+  font-size: clamp($text-2xl, 4vw, $text-3xl);
+  font-weight: $fw-bold;
+  color: $c-text;
+  margin-bottom: $space-2;
+}
+
+.assess-report__company {
+  font-size: $text-base;
+  color: $c-accent;
+  font-weight: $fw-medium;
+  margin-bottom: $space-6;
+}
+
+.assess-total-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-4;
+  margin-bottom: $space-6;
+}
+
+.assess-total-score__ring {
+  display: flex;
+  align-items: baseline;
+  gap: $space-1;
+  padding: $space-4 $space-6;
+  background: rgba($c-accent, 0.08);
+  border: 2px solid $c-accent;
+  border-radius: $radius-xl;
+}
+
+.assess-total-score__num {
+  font-size: $text-4xl;
+  font-weight: $fw-bold;
+  color: $c-accent;
+  line-height: 1;
+}
+
+.assess-total-score__denom {
+  font-size: $text-xl;
+  color: $c-text-muted;
+}
+
+.assess-total-score__meta {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  text-align: left;
+
+  strong {
+    font-size: $text-xl;
+    color: $c-text;
+  }
+
+  span {
+    font-size: $text-sm;
+    color: $c-text-muted;
+  }
+}
+
+.assess-report__summary {
+  font-size: $text-base;
+  color: $c-text-muted;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: $lh-relaxed;
+}
+
+// ---------------------------------------------------------------------------
+// Section
+// ---------------------------------------------------------------------------
+
+.assess-section {
+  background: $c-surface-1;
+  border: 1px solid $c-border;
+  border-radius: $radius-2xl;
+  padding: $space-6 $space-8;
+}
+
+.assess-section__title {
+  font-size: $text-lg;
+  font-weight: $fw-semibold;
+  color: $c-text;
+  margin-bottom: $space-6;
+  padding-bottom: $space-4;
+  border-bottom: 1px solid $c-border;
+}
+
+// ---------------------------------------------------------------------------
+// Scorecard
+// ---------------------------------------------------------------------------
+
+.assess-scorecard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.assess-scorecard__item {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.assess-scorecard__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assess-scorecard__label {
+  font-size: $text-sm;
+  font-weight: $fw-medium;
+  color: $c-text;
+}
+
+.assess-scorecard__score {
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+  padding: $space-1 $space-2;
+  border-radius: $radius-md;
+
+  &.assess-score--high { color: #4ade80; background: rgba(74, 222, 128, 0.1); }
+  &.assess-score--mid  { color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
+  &.assess-score--low  { color: #f87171; background: rgba(248, 113, 113, 0.1); }
+}
+
+.assess-scorecard__track {
+  height: 6px;
+  background: $c-surface-2;
+  border-radius: $radius-full;
+  overflow: hidden;
+}
+
+.assess-scorecard__fill {
+  height: 100%;
+  border-radius: $radius-full;
+  transition: width 0.6s ease;
+
+  &.assess-score--high { background: #4ade80; }
+  &.assess-score--mid  { background: #fbbf24; }
+  &.assess-score--low  { background: #f87171; }
+}
+
+.assess-scorecard__finding {
+  font-size: $text-xs;
+  color: $c-text-muted;
+  margin: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Recommendations
+// ---------------------------------------------------------------------------
+
+.assess-recs {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.assess-rec {
+  display: flex;
+  gap: $space-4;
+  align-items: flex-start;
+}
+
+.assess-rec__num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($c-accent, 0.15);
+  border: 1px solid rgba($c-accent, 0.3);
+  border-radius: $radius-full;
+  font-size: $text-sm;
+  font-weight: $fw-bold;
+  color: $c-accent;
+}
+
+.assess-rec__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.assess-rec__title {
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+  color: $c-text;
+}
+
+.assess-rec__desc {
+  font-size: $text-sm;
+  color: $c-text-muted;
+  margin: 0;
+}
+
+.assess-rec__impact {
+  font-size: $text-xs;
+  font-weight: $fw-semibold;
+  color: #4ade80;
+  letter-spacing: $ls-wide;
+}
+
+// ---------------------------------------------------------------------------
+// Quick wins
+// ---------------------------------------------------------------------------
+
+.assess-wins {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  li {
+    font-size: $text-sm;
+    color: $c-text-muted;
+    padding-left: $space-6;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: $c-accent;
+      border-radius: $radius-full;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Suggested stack
+// ---------------------------------------------------------------------------
+
+.assess-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4;
+
+  @include md {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.assess-stack__item {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  padding: $space-4;
+  background: $c-surface-2;
+  border-radius: $radius-lg;
+
+  strong {
+    font-size: $text-sm;
+    color: $c-text;
+  }
+}
+
+.assess-stack__label {
+  font-size: $text-xs;
+  color: $c-text-muted;
+  text-transform: uppercase;
+  letter-spacing: $ls-wide;
+}
+
+// ---------------------------------------------------------------------------
+// CTA block
+// ---------------------------------------------------------------------------
+
+.assess-cta-block {
+  text-align: center;
+  padding: $space-10 $space-8;
+  background: linear-gradient(135deg, rgba($c-accent, 0.08) 0%, rgba($c-accent, 0.03) 100%);
+  border: 1px solid rgba($c-accent, 0.2);
+  border-radius: $radius-2xl;
+}
+
+.assess-cta-block__title {
+  font-size: $text-2xl;
+  font-weight: $fw-bold;
+  color: $c-text;
+  margin-bottom: $space-3;
+}
+
+.assess-cta-block__desc {
+  font-size: $text-base;
+  color: $c-text-muted;
+  max-width: 480px;
+  margin: 0 auto $space-8;
+}
+
+.assess-cta-block__actions {
+  display: flex;
+  gap: $space-3;
+  justify-content: center;
+  flex-wrap: wrap;
+}
